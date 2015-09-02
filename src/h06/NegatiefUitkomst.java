@@ -10,8 +10,8 @@ public class NegatiefUitkomst extends Applet
 	public void init()
 	{
 		setSize(500, 500);
-		cijfer1 = 2147000000;
-		cijfer2 = 2000000000;
+		cijfer1 = 2147483647;
+		cijfer2 = 1;
 		cijfer3 = cijfer1 + cijfer2;
 	}
 	
