@@ -49,22 +49,22 @@ public class toets01 extends Applet
 	
 	public void paint(Graphics kleuren)
 	{
-		kleuren.drawString("Fris " + frisGetal, 25, 80);
+		kleuren.drawString("Fris € " + frisGetal, 25, 80);
 		kleuren.drawString("aantal" + frisAantal, 200, 80);
-		kleuren.drawString("Wijn " + wijnGetal, 25, 100);
+		kleuren.drawString("Wijn € " + wijnGetal, 25, 100);
 		kleuren.drawString("aantal" + wijnAantal, 200, 100);
-		kleuren.drawString("Koffie " + koffieGetal, 25, 120);
+		kleuren.drawString("Koffie € " + koffieGetal, 25, 120);
 		kleuren.drawString("aantal" + koffieAantal, 200, 120);
-		kleuren.drawString("BinDist " + binDistGetal, 25, 140);
+		kleuren.drawString("BinDist € " + binDistGetal, 25, 140);
 		kleuren.drawString("aantal" + binDistAantal, 200, 140);
-		kleuren.drawString("BuitDist " + buitDistGetal, 25, 160);
+		kleuren.drawString("BuitDist € " + buitDistGetal, 25, 160);
 		kleuren.drawString("aantal" + buitDistAantal, 200, 160);
-		kleuren.drawString("Totaal bestelling " + totaalBestelling, 25, 200);
+		kleuren.drawString("Totaal bestelling € " + totaalBestelling, 25, 200);
 		kleuren.drawString("aantal " + bestellingAantal, 200, 200);
-		kleuren.drawString("Dagomzet " + dagomzet, 25, 220);
+		kleuren.drawString("Dagomzet € " + dagomzet, 25, 220);
 		kleuren.drawString("aantal " + dagomzetAantal, 200, 220);
-		kleuren.drawString("Gemiddelde bestelling " + bestellingGemiddelde, 25, 260);
-		kleuren.drawString("Gemiddelde dagomzet " + dagomzetGemiddelde, 25, 280);
+		kleuren.drawString("Gemiddelde bestelling € " + bestellingGemiddelde, 25, 260);
+		kleuren.drawString("Gemiddelde dagomzet € " + dagomzetGemiddelde, 25, 280);
 		kleuren.drawLine(190, 60, 190, 290);
 		kleuren.drawLine(20, 175, 275, 175);
 		kleuren.drawLine(20, 60, 275, 60);

@@ -1,25 +1,28 @@
-package h08;
+package h10;
 
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class TekstApplet extends Applet
+public class groterDan extends Applet
 {
 	TextField tekstvlak;
 	Label label;
-	Button okeKnop, resetKnop;
+	Button okeKnop;
+	Button resetKnop;
 	String schermtekst;
+	String schermtekst2;
+	double getal1, getal2, getal3, getal4;
 	
 	public void init()
 	{
-		label = new Label("woorden poster");
-		
 		tekstvlak = new TextField(20);
+		label = new Label("groter dan");
 		
 		okeKnop = new Button("Oke");
 		KnopListener kl = new KnopListener();		
         okeKnop.addActionListener(kl);
+        tekstvlak.addActionListener(kl);
         
 		resetKnop = new Button("Reset");
 		TweedeKnopLister kl2 = new TweedeKnopLister();
@@ -30,23 +33,40 @@ public class TekstApplet extends Applet
 		add(okeKnop);
 		add(resetKnop);
 		schermtekst = "";
+		schermtekst2 = "";
 	}
 	
 	public void paint(Graphics kleuren)
 	{
-		kleuren.drawString(schermtekst, 50, 120);	
+		kleuren.drawString("" + getal1, 50, 120);
+		kleuren.drawString("" + getal2, 50, 140);
 	}
 	
 	public void okeField()
 	{
-    	schermtekst = tekstvlak.getText();
-    	repaint();
-    	
+		schermtekst = tekstvlak.getText();
+		getal3 = Double.parseDouble(schermtekst);
+		
+		if(getal3 > getal2)
+		{
+			getal1 = getal3;
+			getal2 = getal1;
+		}
+	}
+	
+	public void laatsteField()
+	{
+		getal2 = Double.parseDouble(schermtekst);
+		repaint();
 	}
 
 	public void resetField()
 	{
-		schermtekst = "";		
+		schermtekst = "";
+		getal1 = 0;
+		getal2 = 0;
+		getal3 = 0;
+		getal4 = 0;
         repaint();
 	}
 	
@@ -55,6 +75,7 @@ public class TekstApplet extends Applet
 		public void actionPerformed(ActionEvent e) 
         {
         	okeField();
+        	laatsteField();
         }		      	        	               
     }
 	
