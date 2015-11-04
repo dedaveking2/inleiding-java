@@ -41,7 +41,6 @@ public class TekstApplet extends Applet
 	{
     	schermtekst = tekstvlak.getText();
     	repaint();
-    	
 	}
 
 	public void resetField()
