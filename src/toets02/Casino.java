@@ -8,9 +8,7 @@ import java.net.*;
 
 public class Casino extends Applet
 {
-	String[] images = {"fruit_1.jpg","fruit_2.jpg","fruit_3.jpg","fruit_4.jpg","fruit_5.jpg","fruit_6.jpg","fruit_7.jpg",
-			 "fruit_8.jpg","fruit_9.jpg","fruit_10.jpg","fruit_11.jpg","fruit_12.jpg","fruit_13.jpg","fruit_14.jpg",
-			 "fruit_15.jpg","fruit_16.jpg","fruit_17.jpg","fruit_18.jpg","fruit_19.jpg","fruit_20.jpg",};
+	String[] images;
 	String gewonnen;
 	Button speelButton, moneyButton;
 	int credietpunten, randomUitkomst1, randomUitkomst2, randomUitkomst3;
@@ -27,6 +25,7 @@ public class Casino extends Applet
 		beginPlaatjesCheck = false;
 		gewonnen = "";
 		pad = getCodeBase();
+		images = new String[20];
 		
 		speelButton = new Button("Speel");
 		KnopListener kl = new KnopListener();		
@@ -41,6 +40,11 @@ public class Casino extends Applet
 		add(moneyButton);
 		
 		sound = getAudioClip(getDocumentBase(), "AIRPORN.wav");
+		
+		for(int i = 0; i < images.length; i++)
+		{
+			images[i] = "fruit_" + (i + 1) + ".jpg";
+		}
 	}
 	
 	public void paint(Graphics kleuren)
