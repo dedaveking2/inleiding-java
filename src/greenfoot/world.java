@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.awt.*;
 
 /**
  * Write a description of class MyWorld here.
@@ -8,15 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+    private counter counter;
+    private endscore endscore;
+    
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 500, 1); 
+        super(700, 500, 1); 
+        
+        int teller, regel, kolom;
         
         addObject(new link(), 175, 250);
         addObject(new enemy(), Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(500));
@@ -36,6 +36,25 @@ public class MyWorld extends World
             addObject(new rupee(), Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(500));
         }
         
+        counter = new counter();
+        regel = getHeight() - counter.getImage().getHeight() / 2 - 2;
+        kolom = counter.getImage().getWidth() / 2 + 1;
+        addObject(counter, kolom, regel);
+        
         setPaintOrder(link.class, enemy.class, rupee.class, bom.class, rock.class);
+    }
+    
+    public void started()
+    {
+        endscore = new endscore();
+    }
+    
+    public void stopped() 
+    {
+        int score;
+        
+        score = 10;
+        endscore.setEndImage(score);
+        addObject(endscore, getWidth() / 2, getHeight() / 2);
     }
 }
